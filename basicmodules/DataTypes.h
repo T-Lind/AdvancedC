@@ -10,6 +10,9 @@ void datatypes() {
     double doubleFloating = 2.718281828459045; // 8 bytes, accurate to 15 decimals, %lf
     char str[] = "Hello world!"; // length of char[] array is actually letters + 1, \0 terminating char is added, %s
 
+    typedef unsigned char vshort;
+    vshort customDatatype = 255; // 0 to 255 inclusive
+
     printf("DATATYPES:\n");
     printf("Example of long long: %lld with size of %d bytes\n\n", veryLongInt, sizeof(veryLongInt));
 }

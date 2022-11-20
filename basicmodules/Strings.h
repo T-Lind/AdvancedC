@@ -23,5 +23,5 @@ void strings(){
     printf("Copied string: %s\n", stringCopy);
 
     // strcmp - returns 0 = true, > 0 = left string has greater ASCII value, < 0 = right string has greater ASCII value
-    printf("Past two strings are the same: %d", strcmp(stringCopy, str2));
+    printf("Past two strings are the same: %d\n\n", strcmp(stringCopy, str2));
 }
