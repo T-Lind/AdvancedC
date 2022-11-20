@@ -11,5 +11,5 @@ void datatypes() {
     char str[] = "Hello world!"; // length of char[] array is actually letters + 1, \0 terminating char is added, %s
 
     printf("DATATYPES:\n");
-    printf("Example of long long: %lld with size of %d bytes\n", veryLongInt, sizeof(veryLongInt));
+    printf("Example of long long: %lld with size of %d bytes\n\n", veryLongInt, sizeof(veryLongInt));
 }
