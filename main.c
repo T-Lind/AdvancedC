@@ -10,7 +10,7 @@
 #include "projects/MatrixFunctions.h"
 #include "time.h"
 #include "projects/OptimizedMatrixFunctions.h"
-
+#include "projects/VisionCalculations.h"
 int main() {
     printing();
     datatypes();
@@ -90,8 +90,31 @@ int main() {
     before = clock();
     OptimizeMatrix_print(size, tableB);
     after = clock();
-    printf("Print time: %.0f milliseconds\n", 1000.0*(after-before)/CLOCKS_PER_SEC);
+    printf("Print time: %.0f milliseconds\n\n", 1000.0*(after-before)/CLOCKS_PER_SEC);
 
+    printf("OPTIMIZING VISION MATH:\n");
+
+    before = clock();
+    for(int i=0;i<numTrials;i++)
+        calculateCoordX(3, 4.5, 0.034);
+    after = clock();
+    printf("Non-optimized X calculate time: %.0f milliseconds\n", 1000.0*(after-before)/CLOCKS_PER_SEC);
+    before = clock();
+    for(int i=0;i<numTrials;i++)
+        calculateCoordY(3, 4.5, 0.034);
+    after = clock();
+    printf("Non-optimized Y calculate time: %.0f milliseconds\n", 1000.0*(after-before)/CLOCKS_PER_SEC);
+
+    before = clock();
+    for(int i=0;i<numTrials;i++)
+        calculateEfficientCoordX(3, 4.5, 0.034);
+    after = clock();
+    printf("Optimized X calculate time: %.0f milliseconds\n", 1000.0*(after-before)/CLOCKS_PER_SEC);
+    before = clock();
+    for(int i=0;i<numTrials;i++)
+        calculateEfficientCoordY(4.5, 0.034);
+    after = clock();
+    printf("Optimized Y calculate time: %.0f milliseconds\n", 1000.0*(after-before)/CLOCKS_PER_SEC);
 
     return 0;
 }
