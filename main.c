@@ -6,6 +6,7 @@
 #include "Structures.h"
 // Do not include Arrays.h, included through Loops.h
 #include "projects/PostfixCalculator.h"
+#include "projects/Tictactoe.h"
 
 int main() {
     printing();
@@ -18,8 +19,11 @@ int main() {
     structures();
 
     // Test postfix calculator
+    printf("POSTFIX CALCULATOR:\n");
     char equation1[] = "27+12-+";
-    printf("Result of %s : %d\n", equation1, calculate(equation1));
+    printf("Result of %s : %d\n\n", equation1, calculate(equation1));
+
+    playTictactoe();
 
     return 0;
 }

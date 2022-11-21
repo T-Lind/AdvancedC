@@ -18,5 +18,5 @@ void structures() {
 
     person1 = person2; // Deep copy!
     person2.name = "Bill";
-    printf("Example of struct reassignments: %s is %d years old.\n", person1.name, person1.age);
+    printf("Example of struct reassignments: %s is %d years old.\n\n", person1.name, person1.age);
 }
