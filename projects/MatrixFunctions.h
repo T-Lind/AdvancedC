@@ -29,6 +29,22 @@ void Matrix_mul(Matrix_Dim size, double arr[][size.width], double arr2[][size.wi
     }
 }
 
+void Matrix_addScalar(Matrix_Dim size, double arr[][size.width], double arr2[][size.width]) {
+    for (int r = 0; r < size.height; r++) {
+        for (int c = 0; c < size.width; c++) {
+            arr[r][c] += arr2[r][c];
+        }
+    }
+}
+
+void Matrix_subScalar(Matrix_Dim size, double arr[][size.width], double arr2[][size.width]) {
+    for (int r = 0; r < size.height; r++) {
+        for (int c = 0; c < size.width; c++) {
+            arr[r][c] -= arr2[r][c];
+        }
+    }
+}
+
 void Matrix_div(Matrix_Dim size, double arr[][size.width], double arr2[][size.width]) {
     for (int r = 0; r < size.height; r++) {
         for (int c = 0; c < size.width; c++) {
