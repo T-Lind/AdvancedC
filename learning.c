@@ -11,6 +11,7 @@
 #include "time.h"
 #include "projects/OptimizedMatrixFunctions.h"
 #include "projects/VisionCalculations.h"
+
 int main() {
     printing();
     datatypes();
@@ -20,6 +21,8 @@ int main() {
 
     functions();
     structures();
+
+    scanf("%hd", NULL);
 
     return 0;
 }
