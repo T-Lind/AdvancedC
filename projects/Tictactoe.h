@@ -3,6 +3,7 @@
 #include "math.h"
 #include "time.h"
 #include "Boolean.h"
+#include "limits.h"
 
 #define TICTACTOE_SIZE 3
 
@@ -152,10 +153,8 @@ int maximizeFunc(char board[TICTACTOE_SIZE][TICTACTOE_SIZE], INT_8 depth, bool i
     }
 }
 
-bool isOpen(char board[TICTACTOE_SIZE][TICTACTOE_SIZE], Coord loc) {
-    if (board[loc.row][loc.col] == ' ')
-        return true;
-    return false;
+bool isOpen(char board[TICTACTOE_SIZE][TICTACTOE_SIZE], Coord loc, char player, char computer) {
+    return board[loc.row][loc.col] != player && board[loc.row][loc.col] != computer;
 }
 
 int computerMove(char board[TICTACTOE_SIZE][TICTACTOE_SIZE], char player, char computer) {
@@ -185,7 +184,7 @@ int computerMove(char board[TICTACTOE_SIZE][TICTACTOE_SIZE], char player, char c
         return coordToNum(bestMove);
     }
     INT_8 randNum = rand() % 10;
-    while (!isOpen(board, numToCoord(randNum)))
+    while (!isOpen(board, numToCoord(randNum), player, computer))
         randNum = rand() % 10;
     return randNum;
 }
@@ -278,7 +277,7 @@ void playTictactoe() {
             printf("Enter your move 1-9, 1=top left, 9=bottom right: ");
             INT_8 move;
             scanf("%hd", &move);
-            if (isOpen(board, numToCoord(move)))
+            if (isOpen(board, numToCoord(move), player, computer))
                 moveOnBoard(board, player, computer, turn, move);
             else {
                 printf("%d is a full square. Please choose an open square!\n", move);
