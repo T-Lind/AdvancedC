@@ -8,8 +8,6 @@ int main(){
     input = fopen("encryption/data_out.txt", "r");
     int fileLen = getFileLength(input);
 
-//    int buffer[fileLen];
-//    fread(buffer, fileLen, sizeof(int), input);
     for (int i = 0; i < fileLen; i++) {
         int val = getw(input);
         printf("%d ", val);
