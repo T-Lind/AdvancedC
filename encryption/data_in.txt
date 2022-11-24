@@ -1,0 +1,2 @@
+Secret data!
+This is data should be encrypted using my basic encryption algorithm
