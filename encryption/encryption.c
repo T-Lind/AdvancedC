@@ -25,11 +25,8 @@ int main() {
     startValue =  Gen.startValue(KEY);
     slope =  Gen.slope(KEY);
     constant = Gen.constant(KEY);
-    printf("Start val: %f\n", startValue);
-    printf("Slope: %f\n", slope);
-    printf("Constant: %f\n", constant);
 
-    char input[] = "The secret password is XA^40956123!\nDo not share this with anyone, except your homie Joe.";
+    char input[] = "The secret password is XA^40956123!\nDo not share this with anyone, except your homie Joe. 2.718281828459045235360747 is the number e, which is euler's number!";
     int fileLen = strlen(input) + 1;
 
     char data[fileLen];
