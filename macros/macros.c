@@ -17,7 +17,6 @@ typedef unsigned char INT_1;
 
 #define STR(a) #a // Hash before converts to string
 
-
 int main() {
     printf("Limit is %d\n", LIMIT);
 
